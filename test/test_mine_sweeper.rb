@@ -6,6 +6,7 @@ class TestMineSweeper < Minitest::Test
   end
 
   def test_initialize
-    assert_equal 'Hi', @minesweeper.message
+    assert_instance_of(Board, @minesweeper.board, 'Minesweeper board must be instance of Board')
+    assert_equal(@minesweeper.difficulty, :beginner) 
   end
 end

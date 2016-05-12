@@ -8,4 +8,8 @@ class Board
     @mines = mines
   end
 
+  def draw
+    
+  end  
+
 end
