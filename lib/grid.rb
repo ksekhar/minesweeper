@@ -1,4 +1,6 @@
-class Board
+require 'matrix'
+
+class Grid
 
   attr_accessor :row, :col, :mines
 
@@ -8,8 +10,11 @@ class Board
     @mines = mines
   end
 
+  def build
+  end
+
   def draw
-    
+
   end  
 
 end
