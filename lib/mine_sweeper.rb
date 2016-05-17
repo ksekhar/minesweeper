@@ -15,11 +15,17 @@ class MineSweeper
     @board.build
   end
 
-  def time_left
+  def time_spent
   end
 
   def play(row:, col:, flag: false)
-    raise 'Game Over' if @board.matrix[row, col].mine?
+    raise 'Game Over' if @board.matrix[row, col].mine? && !flag
+    return @board.flag(row: row, col: col) if flag
+    @board.surrounded_by(square: @board.matrix[row, col])
+  end
+
+  def show
+    @board.player_view
   end
 
 end
