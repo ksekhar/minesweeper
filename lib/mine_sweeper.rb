@@ -12,9 +12,14 @@ class MineSweeper
                          mines: mines || DIFFICULTY_PRESETS[difficulty][:mines])
     @difficulty = difficulty
     @mines = mines || DIFFICULTY_PRESETS[difficulty][:mines]
+    @board.build
   end
 
   def time_left
+  end
+
+  def play(row:, col:, flag: false)
+    raise 'Game Over' if @board.matrix[row, col].mine?
   end
 
 end

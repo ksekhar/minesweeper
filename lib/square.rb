@@ -1,14 +1,17 @@
 class Square
   MAX_MINES = 8
+  STATUSES = %i(blank flagged exploded)
 
-  attr_accessor :status, :position, :mines, :surrounded_by
+  attr_accessor :status, :position, :mine
 
-  def initialize(row:, col:, status:)
-    @position = [row, col]    
-    @status = status || SquareStatus.new
+  def initialize(row:, col:, mine:, status: :blank)
+    @position = [row, col]        
+    @mine = mine
+    @status = status
   end
 
-  def surrounded_by
-    
+  def mine?
+    @mine
   end
+
 end
