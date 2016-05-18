@@ -30,7 +30,7 @@ class Grid
         elsif square.blank?
           array << nil
         else
-          array << surrounded_by(square)
+          array << surrounded_by(square: square)
         end
       }
     end
